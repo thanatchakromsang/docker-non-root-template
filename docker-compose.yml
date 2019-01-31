@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  alpine:
+    build:
+      context: ./alpine
+      dockerfile: Dockerfile
+    volumes:
+      - ./alpine:/app
+
+  python-alpine:
+    build:
+      context: ./python-alpine
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./python-alpine:/app
+
